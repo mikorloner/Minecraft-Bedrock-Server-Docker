@@ -19,9 +19,6 @@ WORKDIR /minecraft/files
 RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/bedrock.sh > /minecraft/bedrock.sh && chmod +x /minecraft/bedrock.sh
 
 # Docker stuff
-
-EXPOSE 19132/udp
-	
 VOLUME /minecraft/files
 
 CMD [ "bash", "/minecraft/bedrock.sh"]
