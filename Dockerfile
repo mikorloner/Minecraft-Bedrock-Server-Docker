@@ -16,7 +16,7 @@ WORKDIR /minecraft
 
 # Get launch script
 
-RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/launch.sh > /minecraft/launch.sh && chmod +x /minecraft/launch.sh
+RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/launch.sh > /minecraft/bedrock.sh && chmod +x /minecraft/bedrock.sh
 
 # Docker stuff
 
