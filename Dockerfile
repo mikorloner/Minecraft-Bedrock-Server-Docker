@@ -31,9 +31,9 @@ RUN rm bedrock.tar
 RUN ln -s /minecraft/server.properties /data/server.properties && \
 	ln -s /minecraft/whitelist.json /data/whitelist.json && \
 	ln -s /minecraft/permissions.json /data/permissions.json && \
-	ln -s /minecraft/worlds /worlds && \
-	ln -s /minecraft/resource_packs /resource_packs && \
-	ln -s /minecraft/behavior_packs /behavior_packs
+	ln -s /minecraft/worlds/ /worlds/ && \
+	ln -s /minecraft/resource_packs/ /resource_packs/ && \
+	ln -s /minecraft/behavior_packs/ /behavior_packs/
 	
 # Docker stuff
 
