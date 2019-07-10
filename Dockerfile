@@ -17,7 +17,7 @@ WORKDIR /minecraft
 # Get Minecraft Server files
 
 RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/versions/1.11.4.2/bedrock.tar> /minecraft/files/bedrock.tar
-RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/versions/1.11.4.2/run.sh > /minecraft/launch.sh && chmod +x /minecraft/launch.sh
+RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/versions/1.11.4.2/launch.sh > /minecraft/launch.sh && chmod +x /minecraft/launch.sh
 
 RUN tar xfv /minecraft/files/bedrock.tar
 RUN rm /minecraft/files/bedrock.tar
