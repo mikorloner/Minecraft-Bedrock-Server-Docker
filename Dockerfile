@@ -11,13 +11,14 @@ RUN apt-get update && \
 # Create folders
 
 RUN	mkdir -p /minecraft
-RUN	mkdir -p /data
-RUN	mkdir -p /worlds
-RUN	mkdir -p /minecraft/worlds
-RUN	mkdir -p /resource_packs
-RUN	mkdir -p /behavior_packs
+#RUN	mkdir -p /data
+#RUN	mkdir -p /worlds
+#RUN	mkdir -p /minecraft/worlds
+#RUN	mkdir -p /resource_packs
+#RUN	mkdir -p /behavior_packs
 
 WORKDIR /minecraft
+
 # Get Minecraft Server files
 
 RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/versions/1.11.4.2/bedrock.tar> /minecraft/bedrock.tar
@@ -39,9 +40,9 @@ RUN ln -s /minecraft/server.properties /data/server.properties && \
 
 EXPOSE 19132/udp
 	
-VOLUME /data
-VOLUME /worlds
-VOLUME /resource_packs
-VOLUME /behavior_packs
+VOLUME /data/
+VOLUME /worlds/
+VOLUME /resource_packs/
+VOLUME /behavior_packs/
 
 CMD [ "bash", "/minecraft/launch.sh"]
