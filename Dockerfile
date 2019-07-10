@@ -21,12 +21,12 @@ WORKDIR /minecraft
 
 # Move files to editable folders and link them
 
-RUN ln -s /files/server.properties /minecraft/server.properties && \
-	ln -s /files/whitelist.json /minecraft/whitelist.json && \
-	ln -s /files/permissions.json /minecraft/permissions.json && \
-	ln -s /worlds /minecraft/worlds && \
-	ln -s /resource_packs /minecraft/resource_packs && \
-	ln -s /behavior_packs /minecraft/behavior_packs
+RUN ln -s /minecraft/server.properties /data/server.properties && \
+	ln -s /minecraft/whitelist.json /data/whitelist.json&& \
+	ln -s /minecraft/permissions.json /data/permissions.json && \
+	ln -s /minecraft/worlds /worlds && \
+	ln -s /minecraft/resource_packs /resource_packs && \
+	ln -s /minecraft/behavior_packs /behavior_packs
 	
 # Get Minecraft Server files
 
@@ -41,7 +41,7 @@ RUN rm bedrock.tar
 
 EXPOSE 19132/udp
 	
-VOLUME /files
+VOLUME /data
 VOLUME /worlds
 VOLUME /resource_packs
 VOLUME /behavior_packs
