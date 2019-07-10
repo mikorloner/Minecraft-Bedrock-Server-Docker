@@ -24,4 +24,4 @@ EXPOSE 19132/udp
 	
 VOLUME /minecraft/files
 
-CMD [ "bash", "/minecraft/launch.sh"]
+CMD [ "bash", "/minecraft/bedrock.sh"]
