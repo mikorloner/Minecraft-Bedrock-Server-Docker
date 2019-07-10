@@ -11,11 +11,11 @@ RUN apt-get update && \
 # Create folders
 
 RUN	mkdir -p /minecraft
-#RUN	mkdir -p /data
-#RUN	mkdir -p /worlds
-#RUN	mkdir -p /minecraft/worlds
-#RUN	mkdir -p /resource_packs
-#RUN	mkdir -p /behavior_packs
+RUN	mkdir -p /data
+RUN	mkdir -p /worlds
+RUN	mkdir -p /minecraft/worlds
+RUN	mkdir -p /resource_packs
+RUN	mkdir -p /behavior_packs
 
 WORKDIR /minecraft
 
@@ -27,7 +27,7 @@ RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/versions/1.11.4.2/
 RUN tar xfv bedrock.tar
 RUN rm bedrock.tar
 
-# Move files to editable folders and link them
+# Link files & folders
 
 RUN ln -s /minecraft/server.properties /data/server.properties && \
 	ln -s /minecraft/whitelist.json /data/whitelist.json && \
