@@ -21,4 +21,4 @@ RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/launch.sh > /minec
 # Docker stuff
 VOLUME /minecraft/files
 
-CMD [ "bash", "/minecraft/bedrock.sh"]
+CMD [ "bash", "/minecraft/launch.sh"]
