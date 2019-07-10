@@ -12,7 +12,7 @@ RUN apt-get update && \
 
 RUN mkdir -p /minecraft/files
 
-WORKDIR /minecraft
+WORKDIR /minecraft/files
 
 # Get launch script
 
