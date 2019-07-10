@@ -14,7 +14,7 @@ RUN mkdir -p /minecraft/files
 
 WORKDIR /minecraft
 
-# Get Script
+# Get launch script
 
 RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/launch.sh > /minecraft/launch.sh && chmod +x /minecraft/launch.sh
 
