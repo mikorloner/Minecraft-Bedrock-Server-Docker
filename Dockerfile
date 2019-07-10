@@ -18,16 +18,6 @@ RUN	mkdir -p /resource_packs
 RUN	mkdir -p /behavior_packs
 
 WORKDIR /minecraft
-
-# Move files to editable folders and link them
-
-RUN ln -s /minecraft/server.properties /data/server.properties && \
-	ln -s /minecraft/whitelist.json /data/whitelist.json&& \
-	ln -s /minecraft/permissions.json /data/permissions.json && \
-	ln -s /minecraft/worlds /worlds && \
-	ln -s /minecraft/resource_packs /resource_packs && \
-	ln -s /minecraft/behavior_packs /behavior_packs
-	
 # Get Minecraft Server files
 
 RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/versions/1.11.4.2/bedrock.tar> /minecraft/bedrock.tar
@@ -36,7 +26,15 @@ RUN wget -q -O - https://kevlo.de/downloads/minecraft/bedrock/versions/1.11.4.2/
 RUN tar xfv bedrock.tar
 RUN rm bedrock.tar
 
+# Move files to editable folders and link them
 
+RUN ln -s /minecraft/server.properties /data/server.properties && \
+	ln -s /minecraft/whitelist.json /data/whitelist.json && \
+	ln -s /minecraft/permissions.json /data/permissions.json && \
+	ln -s /minecraft/worlds /worlds && \
+	ln -s /minecraft/resource_packs /resource_packs && \
+	ln -s /minecraft/behavior_packs /behavior_packs
+	
 # Docker stuff
 
 EXPOSE 19132/udp
